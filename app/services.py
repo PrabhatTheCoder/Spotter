@@ -42,6 +42,7 @@ def geocode_address(address: str):
 
         lat = float(data[0]["lat"])
         lng = float(data[0]["lon"])
+        handle_info_log(f"Geocode API called for: {address} lat={data[0]['lat'] if data else 'None'}, lng={data[0]['lon'] if data else 'None'}", view_name="geocode_address", app_name=APP_NAME)
 
         cache.set(cache_key, (lat, lng), 604800)
         return lat, lng
