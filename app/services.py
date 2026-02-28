@@ -1,5 +1,6 @@
 import bisect
 import hashlib
+from urllib import response
 import requests
 import numpy as np
 from django.core.cache import cache
@@ -35,7 +36,12 @@ def geocode_address(address: str):
             timeout=10
         )
 
-        data = response.json()
+        try:
+            data = response.json()
+        except ValueError:
+            print("Invalid JSON response:", response.text)
+            data = None
+
 
         if not data:
             return None
