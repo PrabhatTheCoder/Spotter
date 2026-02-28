@@ -45,7 +45,7 @@ class FuelUploadView(APIView):
 
 class RouteOptimizeAPI(APIView):
 
-    def post(self, request):
+    def get(self, request):
         view_name = inspect.currentframe().f_code.co_name
         try:
             serializer = RouteRequestSerializer(data=request.data)
