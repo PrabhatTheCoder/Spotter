@@ -190,7 +190,62 @@ Returns optimal fuel stops and route map.
     ],
     "map": {
         "type": "FeatureCollection",
-        "features": [...]
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [-77.033625, 38.894994],
+                        [-77.033641, 38.894345],
+                        [-77.033640, 38.893058],
+                        [-77.033638, 38.892645],
+                        [-77.033634, 38.892254],
+                        [-77.033639, 38.892102]
+                    ]
+                },
+                "properties": {
+                    "type": "route",
+                    "color": "#0066CC"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-74.0060152, 40.7127281]
+                },
+                "properties": {
+                    "type": "start",
+                    "label": "New York"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-77.0365427, 38.8950368]
+                },
+                "properties": {
+                    "type": "end",
+                    "label": "Los Angeles"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-80.8571741, 41.1001272]
+                },
+                "properties": {
+                    "type": "fuel_stop",
+                    "stop_number": 1,
+                    "name": "SHEETZ #791",
+                    "price_per_gallon": 3.0657,
+                    "mile_marker": 410.3
+                }
+            }
+        ]
     }
 }
 ```
