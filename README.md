@@ -112,14 +112,21 @@ nano .env
 Paste the following and save — `Ctrl+X` → `Y` → `Enter`:
 
 ```env
+REDIS_HOST_ONLY=redis
+REDIS_PORT_ONLY=6379
+REDIS_HOST=redis://redis:6379/1
+
 DATABASE_NAME=route_optimizer
 DATABASE_USER=postgres
 DATABASE_PASSWORD=admin
 DATABASE_HOST=db
 DATABASE_PORT=5432
-REDIS_URL=redis://redis:6379/1
-SECRET_KEY=your-secret-key-here
-DEBUG=True
+
+CELERY_BROKER_URL=redis://redis:6379/2
+CELERY_RESULT_BACKEND=redis://redis:6379/2
+
+GEOCODE_URL=https://geocode.maps.co/search
+GEOCODE_API_KEY=your-secret-key-here
 ```
 
 ### 4. Start containers
