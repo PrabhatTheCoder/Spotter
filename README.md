@@ -46,6 +46,19 @@ This project is deployed on **AWS EC2**.
 | **OS** | Ubuntu 24.04 LTS |
 | **Base URL** | `http://54.183.160.135:8000` |
 
+### Security Group Inbound Rules
+
+| Type | Port | Source |
+|------|------|--------|
+| SSH | 22 | Your IP |
+| Custom TCP | 8000 | 0.0.0.0/0 |
+
+### Connect to EC2
+
+```bash
+ssh -i your-key.pem ubuntu@54.183.160.135
+```
+
 ### Deploy on EC2
 
 ```bash
@@ -99,21 +112,14 @@ nano .env
 Paste the following and save — `Ctrl+X` → `Y` → `Enter`:
 
 ```env
-REDIS_HOST_ONLY=redis
-REDIS_PORT_ONLY=6379
-REDIS_HOST=redis://redis:6379/1
-
 DATABASE_NAME=route_optimizer
 DATABASE_USER=postgres
 DATABASE_PASSWORD=admin
 DATABASE_HOST=db
 DATABASE_PORT=5432
-
-CELERY_BROKER_URL=redis://redis:6379/2
-CELERY_RESULT_BACKEND=redis://redis:6379/2
-
-GEOCODE_URL=https://geocode.maps.co/search
-GEOCODE_API_KEY=your-secret-key-here
+REDIS_URL=redis://redis:6379/1
+SECRET_KEY=your-secret-key-here
+DEBUG=True
 ```
 
 ### 4. Start containers
@@ -156,6 +162,7 @@ file: <your CSV file>
 > **Base URL (Local):** `http://localhost:8000`
 >
 > 📮 Postman Collection: [Download here](https://github.com/PrabhatTheCoder/Spotter/blob/be733a353084da352bc92435cdadded4ea91ce76/Spotter.postman_collection.json)
+> 🎥 Loom Demo: [Watch here](https://www.loom.com/share/bfa83950acd84a1eaed195d987823b4b)
 
 ---
 
