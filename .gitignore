@@ -1,0 +1,104 @@
+         # Python-specific ignores
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+venv_wsl/
+venv_wsl.bak/
+.env
+
+# Django-specific ignores
+db.sqlite3
+*.sqlite3
+*.log
+*.pot
+*.py[cod]
+*.so
+.DS_Store
+*.mo
+*.bak
+*.swp
+*.swo
+*.pid
+*.seed
+*.backup
+local_settings.py
+
+# Ignore media and static files (if not managed by version control)
+media/
+staticfiles/
+
+# Ignore migrations (if they are generated automatically)
+**/migrations/**
+
+# Ignore compiled files
+*.egg-info/
+*.eggs/
+.eggs/
+# Jupyter Notebooks
+*.ipynb
+*.egg
+*.whl
+
+# Ignore coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Ignore virtual environment files
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore IDE/editor files
+.idea/
+.vscode/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# Ignore MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore log files and debug output
+*.log
+*.out
+*.err
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.~*
+Thumbs.db
+desktop.ini
+
+# Ignore test artifacts
+test_output/
+coverage.xml
+nosetests.xml
+xunit.xml
+.pytest_cache/
+.cache/
+/logs/
+
+# Ignore test folder
+test/
+test_*.py
+*_test.py
+
+celerybeat-schedule*
+
+media/
+staticfiles/
