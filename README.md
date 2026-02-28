@@ -46,19 +46,6 @@ This project is deployed on **AWS EC2**.
 | **OS** | Ubuntu 24.04 LTS |
 | **Base URL** | `http://54.183.160.135:8000` |
 
-### Security Group Inbound Rules
-
-| Type | Port | Source |
-|------|------|--------|
-| SSH | 22 | Your IP |
-| Custom TCP | 8000 | 0.0.0.0/0 |
-
-### Connect to EC2
-
-```bash
-ssh -i your-key.pem ubuntu@54.183.160.135
-```
-
 ### Deploy on EC2
 
 ```bash
