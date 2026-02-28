@@ -166,6 +166,16 @@ file: <your CSV file>
 
 ---
 
+### 🔐 Admin Panel
+
+| | |
+|---|---|
+| **URL** | `http://54.183.160.135:8000/admin/` |
+| **Username** | `test` |
+| **Password** | `test` |
+
+---
+
 ### `POST /api/route-optimize/`
 
 Returns optimal fuel stops and route map.
