@@ -18,28 +18,32 @@ from app.services import ( geocode_address, fetch_route, build_route_line, get_s
 
 
 class FuelUploadView(APIView):
-
+    view_name = inspect.currentframe().f_code.co_name
     def post(self, request):
+        try:
 
-        file_obj = request.FILES.get("file")
-
-        if not file_obj:
-            return Response(
-                {"error": "File required"},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        upload = FuelPriceUpload.objects.create(file=file_obj)
-
-        process_fuel_upload.delay(upload.id)
-
-        return Response(
-            {
-                "upload_id": upload.id,
-                "status": upload.status
-            },
-            status=status.HTTP_202_ACCEPTED
-        )
+          file_obj = request.FILES.get("file")
+  
+          if not file_obj:
+              return Response(
+                  {"error": "File required"},
+                  status=status.HTTP_400_BAD_REQUEST
+              )
+  
+          upload = FuelPriceUpload.objects.create(file=file_obj)
+  
+          process_fuel_upload.delay(upload.id)
+  
+          return Response(
+              {
+                  "upload_id": upload.id,
+                  "status": upload.status
+              },
+              status=status.HTTP_202_ACCEPTED
+          )
+        except Exception as e:
+            handle_error_log(str(e), view_name, app_name=APP_NAME)
+            return Response({"error": "An error occurred while processing the request."}, status=500)
 
 
 
